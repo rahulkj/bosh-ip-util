@@ -1,15 +1,15 @@
 package main
 
 type Outputs struct {
-  Result []Output
+	Result []Output
 }
 
 type Output struct {
-  Network string
-  ReservedIPRange []string
-  StaticIPRange []string
-  CIDR string
-  TotalIPs int
-  TotalAvailableIPs int
-  TotalReservedIPs int
+	Network           string
+	ReservedIPRange   []string
+	StaticIPRange     []string
+	CIDR              string
+	TotalIPs          int
+	TotalAvailableIPs int
+	TotalReservedIPs  int
 }
