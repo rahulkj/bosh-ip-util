@@ -114,4 +114,13 @@ will produce:
 }
 ```
 
+### Logic
+
+```
+Total IPs = Total IP's in CIDR - 2 (Gateway + Broadcast IP)
+Reserved IPs = Summation of all the Reserved IP ranges defined for each subnet
+Used IPs = Summation of all the IPs in a given subnet, by looking at the `bosh vms` output
+Available IP = Total IPs - Reserved IPs - Used IPs - _(Bosh IP + Compilation IP)_
+```
+
 Hope you enjoy this utility!
