@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-  "os"
-  "io/ioutil"
+	"io/ioutil"
+	"os"
 )
 
 func GetRaw(file string) []byte {
