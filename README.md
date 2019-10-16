@@ -13,6 +13,8 @@ This tool allows one to inspect the cloud config, bosh vms output, to determine:
 
 ### How to Build
 
+`go get -u github.com/rahulkj/bosh-ip-util`
+
 For linux `GOOS=linux GOARCH=amd64 go build -o releases/bosh-ip-util-linux-amd64 github.com/rahulkj/bosh-ip-util`
 
 For mac `GOOS=darwin GOARCH=amd64 go build -o releases/bosh-ip-util-darwin-amd64 github.com/rahulkj/bosh-ip-util`
