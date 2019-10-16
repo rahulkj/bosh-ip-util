@@ -47,12 +47,12 @@ bosh vms --json >> bosh-vms-output.json
 
 Now run the tool
 ```
-/bosh-ip-util -c ~/some-folder/cloud-config.json -v ~/some-folder/bosh-vms-output.json -b BOSH_DIRECTOR_IP
+./bosh-ip-util -c ~/some-folder/cloud-config.json -v ~/some-folder/bosh-vms-output.json -b BOSH_DIRECTOR_IP
 ```
 
 You will get a JSON output, that you can parse. Sample Data:
 ```
-/bosh-ip-util -c /Users/rjain/Documents/github/rahulkj/poc-bosh/cloud-config.json  -v /Users/rjain/Documents/github/rahulkj/poc-bosh/vms.json -b 192.168.10.11 | jq .
+./bosh-ip-util -c ~/poc-bosh/cloud-config.json  -v ~/poc-bosh/vms.json -b 192.168.10.11 | jq .
 ```
 
 will produce:
