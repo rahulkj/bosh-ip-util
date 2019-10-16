@@ -23,6 +23,10 @@ For windows `GOOS=windows GOARCH=386 go build -o releases/bosh-ip-util-windows-a
 
 ### Usage
 
+**NOTE: Please download yq from https://github.com/mikefarah/yq/releases**
+
+**NOTE: Please download yq from https://stedolan.github.io/jq/**
+
 ```
 ./bosh-ip-util
    -b string
@@ -39,8 +43,6 @@ bosh cloud-config > cloud-config.yml
 
 yq -r -f cloud-config.yml > cloud-config.json
 ```
-
-**NOTE: Please download yq from https://github.com/mikefarah/yq/releases**
 
 To fetch the bosh vms output in json format, please execute:
 ```
