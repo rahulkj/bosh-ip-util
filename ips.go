@@ -41,7 +41,8 @@ func compute(cloudConfigOutputJSON string, boshVMsOutput string, boshIP string) 
 
 			totalIps := (len(ips) - 2)
 			totalReservedIps, isBoshIPReserved := getTotalReservedIPs(subnet, ips, boshIP)
-			availableIPs := computeAvailableIPS(boshVMS, ipv4Net, cloudConfig, network.Name, totalIps, totalReservedIps, isBoshIPReserved)
+			availableIPs := computeAvailableIPS(boshVMS, ipv4Net, cloudConfig, network.Name, totalIps,
+				totalReservedIps, boshIP, isBoshIPReserved)
 
 			o := Output{
 				Network:           network.Name,
@@ -142,7 +143,8 @@ func getTotalReservedIPs(subnet Subnet, ips []string, boshIP string) (int, bool)
 	return totalReservedIps, isboshIPReserved
 }
 
-func computeAvailableIPS(boshVMS BoshVMs, ipv4Net *net.IPNet, cloudConfig CloudConfig, network string, totalIps int, totalReservedIps int, isBoshIPReserved bool) int {
+func computeAvailableIPS(boshVMS BoshVMs, ipv4Net *net.IPNet, cloudConfig CloudConfig,
+	network string, totalIps int, totalReservedIps int, boshIP string, isBoshIPReserved bool) int {
 	availableIPs := totalIps - totalReservedIps
 	for _, table := range boshVMS.Tables {
 		for _, row := range table.Rows {
@@ -158,7 +160,7 @@ func computeAvailableIPS(boshVMS BoshVMs, ipv4Net *net.IPNet, cloudConfig CloudC
 		availableIPs = availableIPs - cloudConfig.Compilation.Workers
 	}
 
-	if !isBoshIPReserved {
+	if ipv4Net.Contains(net.ParseIP(boshIP)) && !isBoshIPReserved {
 		availableIPs = availableIPs - 1
 	}
 
