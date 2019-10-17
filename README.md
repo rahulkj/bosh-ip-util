@@ -33,7 +33,7 @@ export BOSH_CA_CERT=
 
 Now run the tool
 ```
-./bosh-ip-util
+./bosh-ip-util | jq .
 ```
 
 You will get a JSON output, that you can parse. Sample Data:
