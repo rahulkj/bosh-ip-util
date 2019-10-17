@@ -23,43 +23,20 @@ For windows `GOOS=windows GOARCH=386 go build -o releases/bosh-ip-util-windows-a
 
 ### Usage
 
-**NOTE: Please download yq from https://github.com/mikefarah/yq/releases**
-
-**NOTE: Please download yq from https://stedolan.github.io/jq/**
-
+Export all the BOSH environment variables
 ```
-./bosh-ip-util
-   -b string
-       Bosh Director IP
-   -c string
-       Cloud Config json file
-   -v string
-       Bosh VMS output json file
-```
-
-To fetch the cloud config in json format, please execute:
-```
-bosh cloud-config > cloud-config.yml
-
-yq -r -f cloud-config.yml > cloud-config.json
-```
-
-To fetch the bosh vms output in json format, please execute:
-```
-bosh vms --json >> bosh-vms-output.json
+export BOSH_ENVIRONMENT=
+export BOSH_CLIENT=
+export BOSH_CLIENT_SECRET=
+export BOSH_CA_CERT=
 ```
 
 Now run the tool
 ```
-./bosh-ip-util -c ~/some-folder/cloud-config.json -v ~/some-folder/bosh-vms-output.json -b BOSH_DIRECTOR_IP
+./bosh-ip-util
 ```
 
 You will get a JSON output, that you can parse. Sample Data:
-```
-./bosh-ip-util -c ~/poc-bosh/cloud-config.json  -v ~/poc-bosh/vms.json -b 192.168.10.11 | jq .
-```
-
-will produce:
 ```
 {
   "Result": [

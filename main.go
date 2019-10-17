@@ -1,22 +1,30 @@
 package main
 
 import (
-	"flag"
+	"fmt"
 	"os"
 )
 
 func main() {
 
-	boshIP := flag.String("b", "", "Bosh Director IP")
-	inputCloudConfig := flag.String("c", "", "Cloud Config json file")
-	inputBoshVMsOutput := flag.String("v", "", "Bosh VMS output json file")
+	envVars := []string{"BOSH_ENVIRONMENT", "BOSH_CLIENT", "BOSH_CLIENT_SECRET", "BOSH_CA_CERT"}
 
-	flag.Parse()
+	var missingVars []string
+	for i := range envVars {
+		_, ok := os.LookupEnv(envVars[i])
+		if !ok {
+			missingVars = append(missingVars, envVars[i])
+		}
+	}
 
-	if *inputCloudConfig == "" || *inputBoshVMsOutput == "" || *boshIP == "" {
-		flag.PrintDefaults()
+	if len(missingVars) > 0 {
+		fmt.Println("These environment variables are not set: ", missingVars)
 		os.Exit(1)
 	}
 
-	compute(*inputCloudConfig, *inputBoshVMsOutput, *boshIP)
+	boshIP, _ := os.LookupEnv("BOSH_ENVIRONMENT")
+
+	cloudConfigOutputJSON, boshVMsOutput := getDetailsFromBosh()
+
+	compute(cloudConfigOutputJSON, boshVMsOutput, boshIP)
 }
