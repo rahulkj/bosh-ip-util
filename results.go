@@ -1,10 +1,10 @@
 package main
 
-type Outputs struct {
-	Result []Output
+type Results struct {
+	Result []Result
 }
 
-type Output struct {
+type Result struct {
 	Network           string
 	ReservedIPRange   []string
 	StaticIPRange     []string

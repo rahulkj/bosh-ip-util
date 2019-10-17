@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 )
 
@@ -26,5 +27,10 @@ func main() {
 
 	cloudConfigOutputJSON, boshVMsOutput := getDetailsFromBosh()
 
-	compute(cloudConfigOutputJSON, boshVMsOutput, boshIP)
+	result, err := compute(cloudConfigOutputJSON, boshVMsOutput, boshIP)
+	if err != nil {
+		log.Println(fmt.Sprintf("[ERROR] Could perform the operation: %s", err.Error()))
+	}
+
+	fmt.Println(result)
 }

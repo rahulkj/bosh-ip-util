@@ -1,0 +1,35 @@
+{
+    "Tables": [
+        {
+            "Content": "vms",
+            "Header": {
+                "active": "Active",
+                "az": "AZ",
+                "instance": "Instance",
+                "ips": "IPs",
+                "process_state": "Process State",
+                "vm_cid": "VM CID",
+                "vm_type": "VM Type"
+            },
+            "Rows": [
+                {
+                    "active": "true",
+                    "az": "AZ-1",
+                    "instance": "pivotal-container-service/489bf867-2990-45f7-ba17-dc18f8226235",
+                    "ips": "192.168.12.11",
+                    "process_state": "running",
+                    "vm_cid": "vm-acb5559c-eafe-465d-8c7a-5384873fe304",
+                    "vm_type": "large.disk"
+                }
+            ],
+            "Notes": null
+        }
+    ],
+    "Blocks": null,
+    "Lines": [
+        "Using environment '192.168.10.11' as client 'ops_manager'",
+        "Task 70",
+        ". Done",
+        "Succeeded"
+    ]
+}

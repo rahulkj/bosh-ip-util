@@ -2,40 +2,31 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
-	"log"
 	"net"
-	"os"
 	"strings"
 )
 
-func compute(cloudConfigOutputJSON string, boshVMsOutput string, boshIP string) {
+// Get the Results json response, with all the relevant info
+func compute(cloudConfigOutputJSON string, boshVMsOutput string, boshIP string) (string, error) {
 
-	// Generic interface to read the file into
 	var cloudConfig CloudConfig
 	err := json.Unmarshal([]byte(cloudConfigOutputJSON), &cloudConfig)
 	if err != nil {
-		fmt.Println("Error parsing JSON: ", err)
+		return "", err
 	}
 
 	var boshVMS BoshVMs
 	err = json.Unmarshal([]byte(boshVMsOutput), &boshVMS)
 	if err != nil {
-		fmt.Println("Error parsing JSON: ", err)
+		return "", err
 	}
 
-	var outputs []Output
+	var results []Result
 
 	for _, network := range cloudConfig.Networks {
 
 		for _, subnet := range network.Subnets {
-			ip, ipv4Net, err := net.ParseCIDR(subnet.Range)
-			if err != nil {
-				log.Fatal(err)
-				os.Exit(1)
-			}
-			// fmt.Println(ip)
-			// fmt.Println(ipv4Net)
+			ip, ipv4Net, _ := net.ParseCIDR(subnet.Range)
 
 			ips := getAllIPsInCIDR(ip, ipv4Net)
 
@@ -44,7 +35,7 @@ func compute(cloudConfigOutputJSON string, boshVMsOutput string, boshIP string) 
 			availableIPs := computeAvailableIPS(boshVMS, ipv4Net, cloudConfig, network.Name, totalIps,
 				totalReservedIps, boshIP, isBoshIPReserved)
 
-			o := Output{
+			o := Result{
 				Network:           network.Name,
 				ReservedIPRange:   subnet.Reserved,
 				StaticIPRange:     subnet.Static,
@@ -54,20 +45,17 @@ func compute(cloudConfigOutputJSON string, boshVMsOutput string, boshIP string) 
 				TotalReservedIPs:  totalReservedIps,
 			}
 
-			outputs = append(outputs, o)
+			results = append(results, o)
 		}
 	}
 
-	output := Outputs{
-		Result: outputs,
+	result := Results{
+		Result: results,
 	}
 
-	final, err1 := json.Marshal(output)
-	if err1 != nil {
-		fmt.Println("Error parsing JSON: ", err)
-	}
+	final, _ := json.Marshal(result)
 
-	fmt.Println(string(final))
+	return string(final), nil
 }
 
 func getAllIPsInCIDR(ip net.IP, ipv4Net *net.IPNet) []string {
@@ -78,8 +66,6 @@ func getAllIPsInCIDR(ip net.IP, ipv4Net *net.IPNet) []string {
 			ips = append(ips, ip.String())
 		}
 	}
-
-	// fmt.Println(ips)
 
 	return ips
 }
@@ -93,6 +79,7 @@ func inc(ip net.IP) {
 	}
 }
 
+// Sum all the reserved ip/range that belong to the subnet of the given network
 func getTotalReservedIPs(subnet Subnet, ips []string, boshIP string) (int, bool) {
 	totalReservedIps := 0
 	isboshIPReserved := false
@@ -101,8 +88,6 @@ func getTotalReservedIPs(subnet Subnet, ips []string, boshIP string) (int, bool)
 		if len(reservedIps) == 2 {
 			startIP := reservedIps[0]
 			endIP := reservedIps[1]
-			// fmt.Println("Start of the Reserved IP is: ", startIP)
-			// fmt.Println("End of the Reserved IP is: ", endIP)
 
 			startIPIndex := 0
 			endIPIndex := 0
@@ -126,9 +111,6 @@ func getTotalReservedIPs(subnet Subnet, ips []string, boshIP string) (int, bool)
 				isboshIPReserved = true
 			}
 
-			// fmt.Println("Start Index of the Reserved IP is: ", startIPIndex)
-			// fmt.Println("End Index of the Reserved IP is: ", endIPIndex)
-			// fmt.Println("reserved ips length: ", len(ips[startIPIndex:endIPIndex+1]))
 			totalReservedIps += len(ips[startIPIndex : endIPIndex+1])
 		} else if len(reservedIps) == 1 {
 			totalReservedIps++
@@ -143,13 +125,15 @@ func getTotalReservedIPs(subnet Subnet, ips []string, boshIP string) (int, bool)
 	return totalReservedIps, isboshIPReserved
 }
 
+// If bosh director IP is part of reserved IP Ranges in the right network, then don't reduce the available IP's count
+// If compilation VM's are part of the network, then subtract that number from available IP's count
+// availableIPs = totalIps - totalReservedIps - ipsinuse - (above conditions if true)
 func computeAvailableIPS(boshVMS BoshVMs, ipv4Net *net.IPNet, cloudConfig CloudConfig,
 	network string, totalIps int, totalReservedIps int, boshIP string, isBoshIPReserved bool) int {
 	availableIPs := totalIps - totalReservedIps
 	for _, table := range boshVMS.Tables {
 		for _, row := range table.Rows {
 			if ipv4Net.Contains(net.ParseIP(row.IPS)) {
-				// fmt.Println("IP %s Belongs to subnet: %s", row.IPS, ipv4Net)
 				availableIPs = availableIPs - len(table.Rows)
 				break
 			}
