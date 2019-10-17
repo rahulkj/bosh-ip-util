@@ -1,4 +1,10 @@
-#!/bin/bash
+#!/bin/bash -e
+
+go test
+
+if [[ -d releases ]]; then
+  rm -rf releases
+fi
 
 mkdir releases
 
