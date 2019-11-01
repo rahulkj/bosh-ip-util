@@ -134,8 +134,7 @@ func computeAvailableIPS(boshVMS BoshVMs, ipv4Net *net.IPNet, cloudConfig CloudC
 	for _, table := range boshVMS.Tables {
 		for _, row := range table.Rows {
 			if ipv4Net.Contains(net.ParseIP(row.IPS)) {
-				availableIPs = availableIPs - len(table.Rows)
-				break
+				availableIPs = availableIPs - 1
 			}
 		}
 	}

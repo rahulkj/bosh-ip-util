@@ -20,6 +20,24 @@
                     "process_state": "running",
                     "vm_cid": "vm-acb5559c-eafe-465d-8c7a-5384873fe304",
                     "vm_type": "large.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "AZ-1",
+                    "instance": "pivotal-container-service/489bf867-3000-45f7-ba17-dc18f8226235",
+                    "ips": "192.168.18.13",
+                    "process_state": "running",
+                    "vm_cid": "vm-acb5559c-eafe-465d-8c7a-5384873fe304",
+                    "vm_type": "large.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "AZ-1",
+                    "instance": "pivotal-container-service/489bf867-3010-45f7-ba17-dc18f8226235",
+                    "ips": "192.168.18.14",
+                    "process_state": "running",
+                    "vm_cid": "vm-acb5559c-eafe-465d-8c7a-5384873fe304",
+                    "vm_type": "large.disk"
                 }
             ],
             "Notes": null
