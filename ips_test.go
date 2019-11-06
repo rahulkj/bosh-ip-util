@@ -11,8 +11,8 @@ import (
 	"github.com/sclevine/spec/report"
 )
 
-func TestHandler(t *testing.T) {
-	spec.Run(t, "Handler", testAvailableIPs, spec.Report(report.Terminal{}))
+func TestIPs(t *testing.T) {
+	spec.Run(t, "ips.go", testAvailableIPs, spec.Report(report.Terminal{}))
 }
 
 func testAvailableIPs(t *testing.T, when spec.G, it spec.S) {
