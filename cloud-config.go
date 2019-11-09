@@ -11,12 +11,18 @@ type Network struct {
 }
 
 type Subnet struct {
-	Range    string   `json:"range"`
-	Reserved []string `json:"reserved"`
-	Static   []string `json:"static"`
+	AZs             []string        `json:"azs"`
+	Range           string          `json:"range"`
+	Reserved        []string        `json:"reserved"`
+	Static          []string        `json:"static"`
+	CloudProperties CloudProperties `json:"cloud_properties"`
 }
 
 type Compilation struct {
 	Network string `json:network`
 	Workers int    `json:"workers"`
+}
+
+type CloudProperties struct {
+	Name string `json:"name"`
 }

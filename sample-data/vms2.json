@@ -1,0 +1,1032 @@
+{
+    "Tables": [
+        {
+            "Content": "vms",
+            "Header": {
+                "active": "Active",
+                "az": "AZ",
+                "instance": "Instance",
+                "ips": "IPs",
+                "process_state": "Process State",
+                "vm_cid": "VM CID",
+                "vm_type": "VM Type"
+            },
+            "Rows": [
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "backup_restore/9a8cc5eb-8a97-4e6c-8f76-671cfac0c4b2",
+                    "ips": "10.135.140.28",
+                    "process_state": "running",
+                    "vm_cid": "vm-97a0a2cf-52ba-460b-bd37-0b3ee50e42af",
+                    "vm_type": "xlarge"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "clock_global/45ed9d78-37c5-43b0-9073-53a6ee9854a6",
+                    "ips": "10.135.140.31",
+                    "process_state": "running",
+                    "vm_cid": "vm-efa9b394-cc97-473d-8876-b1f4c28e7827",
+                    "vm_type": "medium.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "clock_global/b1395c44-847c-450b-bb9a-fbce3dd0d4e0",
+                    "ips": "10.135.147.39",
+                    "process_state": "running",
+                    "vm_cid": "vm-578ac237-7bb3-4426-a507-8a617d3831e0",
+                    "vm_type": "medium.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "clock_global/c9871d50-ce59-4376-99f0-46d96a39fed5",
+                    "ips": "10.135.133.17",
+                    "process_state": "running",
+                    "vm_cid": "vm-807465d0-aaea-4a41-8fd4-e513ff930050",
+                    "vm_type": "medium.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "cloud_controller/8c3772af-ac50-4d6b-b136-93609aa0d40f",
+                    "ips": "10.135.133.16",
+                    "process_state": "running",
+                    "vm_cid": "vm-3773e031-3918-4631-aa7c-5b22c3724aa4",
+                    "vm_type": "medium.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "cloud_controller/99ed5cbf-c2da-4fbe-8637-936e3841ad13",
+                    "ips": "10.135.147.22",
+                    "process_state": "running",
+                    "vm_cid": "vm-0e851da7-d379-4435-902a-7cefbb03fb7c",
+                    "vm_type": "medium.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "cloud_controller/a7dde5af-168e-48d3-9917-9af4af328db8",
+                    "ips": "10.135.140.14",
+                    "process_state": "running",
+                    "vm_cid": "vm-04488201-4029-4665-bd3e-207897a08943",
+                    "vm_type": "medium.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "cloud_controller_worker/938da46e-6aec-4b50-aede-2afd38502868",
+                    "ips": "10.135.140.15",
+                    "process_state": "running",
+                    "vm_cid": "vm-0dc08aa9-0f26-4dec-a05f-0c00e789b6a0",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "cloud_controller_worker/97d6e087-5d6e-4fbc-b9cd-f81a446f3a61",
+                    "ips": "10.135.133.18",
+                    "process_state": "running",
+                    "vm_cid": "vm-406327a6-5551-42dd-b8b4-4648105ec291",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "cloud_controller_worker/e5400a1b-c52e-4a62-aca3-dc0eeed2dac4",
+                    "ips": "10.135.147.40",
+                    "process_state": "running",
+                    "vm_cid": "vm-c5cb2eb7-e1c7-4d9f-b547-ff69e7bee4ae",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "consul_server/4d495f1a-1739-410e-b641-1b119ee45323",
+                    "ips": "10.135.147.21",
+                    "process_state": "running",
+                    "vm_cid": "vm-b451ee89-533a-4fc5-ab3d-5cf3cd05e1f8",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "consul_server/597b4145-a01c-4b7c-811e-6a9f97baa6fe",
+                    "ips": "10.135.140.16",
+                    "process_state": "running",
+                    "vm_cid": "vm-522139bb-34c0-4f10-b609-4428000717c6",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "consul_server/73009e18-bc05-4997-8053-8e51123fc5b3",
+                    "ips": "10.135.133.11",
+                    "process_state": "running",
+                    "vm_cid": "vm-7de4f614-2500-4e5f-ae4b-6282d05a6ac6",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "credhub/3eaa8361-830c-4fe2-bfc9-b70a6616f172",
+                    "ips": "10.135.147.37",
+                    "process_state": "running",
+                    "vm_cid": "vm-80762bdb-d2e3-47ae-9f88-a0c41652e6cf",
+                    "vm_type": "large"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "credhub/9c7feb9e-9b4a-4844-8bbe-8dc02b21f787",
+                    "ips": "10.135.133.43",
+                    "process_state": "running",
+                    "vm_cid": "vm-2499f86d-432d-43be-8459-b3642fcc2fd4",
+                    "vm_type": "large"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "credhub/ac27ee5f-0fe8-4d3d-86ef-032e0171bd45",
+                    "ips": "10.135.140.48",
+                    "process_state": "running",
+                    "vm_cid": "vm-22d3cfe3-e29b-40b7-b8f2-fd808e5b98c7",
+                    "vm_type": "large"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "diego_brain/b0f7a53c-26e1-4300-bafc-7bd5d4afc48b",
+                    "ips": "10.135.147.103",
+                    "process_state": "running",
+                    "vm_cid": "vm-a83982c3-ae00-43a0-8827-9bd0ff1ceb55",
+                    "vm_type": "small"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "diego_brain/e428b9f0-162a-4846-b7c0-62d0e8c86082",
+                    "ips": "10.135.140.103",
+                    "process_state": "running",
+                    "vm_cid": "vm-034593df-9fc1-48eb-959b-2cd81e959949",
+                    "vm_type": "small"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "diego_brain/f0a6d9a8-7dfe-46f2-b678-305133fee858",
+                    "ips": "10.135.133.103",
+                    "process_state": "running",
+                    "vm_cid": "vm-f9b3e0f6-1e0b-4cd8-8a60-081d611ff29a",
+                    "vm_type": "small"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "diego_cell/403c1a27-2c54-4adc-99d3-2d5ca3c61963",
+                    "ips": "10.135.140.20",
+                    "process_state": "running",
+                    "vm_cid": "vm-a5537c0f-efee-4837-b06f-829a80745a7f",
+                    "vm_type": "2xlarge.mem.diegocell"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "diego_cell/5a47855d-eb8b-4aa7-bbf9-dcef7f38eb58",
+                    "ips": "10.135.147.14",
+                    "process_state": "running",
+                    "vm_cid": "vm-9f455d81-ed3f-40e5-86f5-341937cf0f02",
+                    "vm_type": "2xlarge.mem.diegocell"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "diego_cell/c98ffccb-2ce0-489c-93c3-0c378c5daaff",
+                    "ips": "10.135.133.19",
+                    "process_state": "running",
+                    "vm_cid": "vm-bf793cb2-f92c-4819-a5b3-beffea729d27",
+                    "vm_type": "2xlarge.mem.diegocell"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "diego_database/11da44fd-3b4f-4e2c-b728-ce2e9858f3e2",
+                    "ips": "10.135.133.14",
+                    "process_state": "running",
+                    "vm_cid": "vm-5402b586-b65f-41d4-ad43-fc8029e55d5b",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "diego_database/8de3c787-3bfa-4960-97e3-cfcccdd38461",
+                    "ips": "10.135.140.12",
+                    "process_state": "running",
+                    "vm_cid": "vm-88f1161e-1d35-40ad-86ec-14299231c147",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "diego_database/923046a9-bfef-4f9f-b09a-e1d220aaf425",
+                    "ips": "",
+                    "process_state": "running",
+                    "vm_cid": "vm-d0ae198b-e17c-4607-a69a-3d74387d3057",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "doppler/1f11d291-6131-42e7-a3a2-7d2ba4232dcf",
+                    "ips": "10.135.147.17",
+                    "process_state": "running",
+                    "vm_cid": "vm-7b07274a-c7cb-47ed-9c17-897f6e24325e",
+                    "vm_type": "medium.mem"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "doppler/54278855-e590-43ae-95df-348324a90517",
+                    "ips": "10.135.140.25",
+                    "process_state": "running",
+                    "vm_cid": "vm-140c2691-6074-405a-bda1-7e898ef46ead",
+                    "vm_type": "medium.mem"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "doppler/e3d17d35-589a-4156-81ec-1b6c373a31c1",
+                    "ips": "10.135.133.22",
+                    "process_state": "running",
+                    "vm_cid": "vm-f45d7027-6de6-4757-bfcf-203b54921d78",
+                    "vm_type": "medium.mem"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "loggregator_trafficcontroller/8f6ae551-3fbd-4179-a8a6-08432e225336",
+                    "ips": "10.135.147.15",
+                    "process_state": "running",
+                    "vm_cid": "vm-dc964d46-5445-4bac-97b7-8e13bd627d8c",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "loggregator_trafficcontroller/94da2f1f-38b9-483e-a9dd-d331355d586b",
+                    "ips": "10.135.133.20",
+                    "process_state": "running",
+                    "vm_cid": "vm-b9125ea8-06b0-49a6-9b58-c1afe6600f67",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "loggregator_trafficcontroller/d9f3da2e-13ec-42f7-8433-0e092e24ba07",
+                    "ips": "10.135.140.21",
+                    "process_state": "running",
+                    "vm_cid": "vm-15e4b3e2-e613-4d99-bcd2-e3ae54f7e4ce",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "mysql/95a80635-6179-462a-8b3b-7cd414e3a439",
+                    "ips": "10.135.147.12",
+                    "process_state": "running",
+                    "vm_cid": "vm-3d026f9f-5933-46bf-aef5-ff64adc4231f",
+                    "vm_type": "large.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "mysql/a1afcaf4-9452-4a6d-b671-7a227dbb06d6",
+                    "ips": "10.135.140.19",
+                    "process_state": "running",
+                    "vm_cid": "vm-a3325434-4e4b-4924-9d91-464ad7da016a",
+                    "vm_type": "large.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "mysql/cf0f6663-046d-436f-bdbf-1a22895fa95b",
+                    "ips": "10.135.133.13",
+                    "process_state": "running",
+                    "vm_cid": "vm-7e8a309c-3baa-4361-bf06-bb8860fde1b1",
+                    "vm_type": "large.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "mysql_monitor/39a18306-3cdb-495a-964e-eab5525846d0",
+                    "ips": "10.135.140.23",
+                    "process_state": "running",
+                    "vm_cid": "vm-431d3167-c488-490d-bd2c-31456bd49f39",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "mysql_proxy/16213421-c8e7-4292-a7a1-1c2848071e43",
+                    "ips": "10.135.133.101",
+                    "process_state": "running",
+                    "vm_cid": "vm-df076f4b-25b5-419e-b164-d28c4cbb3193",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "mysql_proxy/59c7b68d-9e1e-48d3-9517-712c9047d30f",
+                    "ips": "10.135.140.101",
+                    "process_state": "running",
+                    "vm_cid": "vm-182dbf4b-9226-4ac3-ac5d-29e87813a145",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "mysql_proxy/621f7b8e-024d-4a90-b6b2-e2aded19227d",
+                    "ips": "10.135.147.101",
+                    "process_state": "running",
+                    "vm_cid": "vm-8ea447ac-eef6-4729-bac2-cc1dc1c0cd81",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "nats/22dfeaf5-df92-479a-a377-7996ffbf746d",
+                    "ips": "10.135.133.12",
+                    "process_state": "running",
+                    "vm_cid": "vm-7743db70-5acd-427d-9ce8-21fedfa65d83",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "nats/906fb5b9-0d29-4909-9faa-e8f13686cba2",
+                    "ips": "10.135.140.17",
+                    "process_state": "running",
+                    "vm_cid": "vm-773ff502-bab2-44eb-b8ca-03f9d5f9f9f6",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "nats/bef3a019-1b11-415a-b4ea-995183481c89",
+                    "ips": "10.135.147.18",
+                    "process_state": "running",
+                    "vm_cid": "vm-1655a548-8ea5-4fe0-94f6-a8132f46b0a3",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "router/18e2b533-a016-40d9-a770-3d09eba4c896",
+                    "ips": "10.135.140.105",
+                    "process_state": "running",
+                    "vm_cid": "vm-f8902bd5-5d1a-49af-8f0b-376c6026bdea",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "router/1ca8468a-4600-41bf-84e9-91e455621992",
+                    "ips": "10.135.147.105",
+                    "process_state": "running",
+                    "vm_cid": "vm-1f0529b8-2cf0-4a7c-9327-c5e70bc54c06",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "router/564b1654-dca8-4fcb-8e68-32a7b411f864",
+                    "ips": "10.135.133.105",
+                    "process_state": "running",
+                    "vm_cid": "vm-3a7289b3-a80d-41a0-abdd-652e2af497c7",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "router/5bac3fb7-5e4a-419d-ad27-65e320e8efc7",
+                    "ips": "10.135.147.104",
+                    "process_state": "running",
+                    "vm_cid": "vm-f3054091-9561-4b9b-b15a-af1737ffcb67",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "router/6e3ee1b1-8c31-4f20-b634-27304b545760",
+                    "ips": "10.135.133.104",
+                    "process_state": "running",
+                    "vm_cid": "vm-6b026047-e66e-4142-9cdb-f1395cb8907e",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "router/f6d2a89e-d83b-4982-91fc-9605b1d9d64b",
+                    "ips": "10.135.140.104",
+                    "process_state": "running",
+                    "vm_cid": "vm-bd418103-1562-4d09-84fa-892d01168c96",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "syslog_adapter/5d8b7875-3de3-4468-960b-4e73040b3084",
+                    "ips": "10.135.133.21",
+                    "process_state": "running",
+                    "vm_cid": "vm-ea4a400d-beca-472e-a7c2-6e516866792c",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "syslog_adapter/68d26386-0382-4132-876c-8b5cdeaddfb2",
+                    "ips": "10.135.147.16",
+                    "process_state": "running",
+                    "vm_cid": "vm-038919e0-86f9-4760-80d1-edc2f9b4a40c",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "syslog_adapter/961be3ef-fb78-4bba-8b61-8488914b94e9",
+                    "ips": "10.135.140.22",
+                    "process_state": "running",
+                    "vm_cid": "vm-18ee52b5-b67b-4952-87bd-849e53193db0",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "syslog_scheduler/73b81118-bd97-48a3-b243-e80ddd86650c",
+                    "ips": "10.135.140.24",
+                    "process_state": "running",
+                    "vm_cid": "vm-7fc73a2b-d762-4326-9c68-f47b567fe53a",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "syslog_scheduler/88fe8a24-4559-4cbf-9f72-8cdc74857e4b",
+                    "ips": "10.135.133.42",
+                    "process_state": "running",
+                    "vm_cid": "vm-a4177898-a40c-453a-9d2f-7681d6ced7e1",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "tcp_router/1f3e1aa9-709f-45cb-90e1-443ea1ff349d",
+                    "ips": "10.135.140.110",
+                    "process_state": "running",
+                    "vm_cid": "vm-50729d1e-e599-4a88-bc02-735cdd5777a4",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "tcp_router/381912a8-8cce-4dd9-a4ce-a3856c472638",
+                    "ips": "10.135.133.110",
+                    "process_state": "running",
+                    "vm_cid": "vm-e7f2965a-5345-4007-b3a3-cb3b4793504b",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "tcp_router/68a490d7-7425-42db-a766-4573c29b934f",
+                    "ips": "10.135.133.109",
+                    "process_state": "running",
+                    "vm_cid": "vm-ae5fd6f6-3ccd-43dd-835d-01b8d5d937d4",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "tcp_router/80420030-5740-40c1-ab88-2cb539761354",
+                    "ips": "10.135.147.110",
+                    "process_state": "running",
+                    "vm_cid": "vm-8574a633-ba19-453f-b063-81aeabdd2bc2",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "tcp_router/9008a8c0-7c12-4f85-8de5-65888d991286",
+                    "ips": "10.135.140.109",
+                    "process_state": "running",
+                    "vm_cid": "vm-04e5c0ca-6ef7-4ac5-9dc1-8a117384b9f4",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "tcp_router/cd1888dd-9148-41b8-82ee-fc756d98708b",
+                    "ips": "10.135.147.109",
+                    "process_state": "running",
+                    "vm_cid": "vm-05893cf1-8685-48ae-b2c3-8be2807adfc7",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "uaa/220acf5e-d5aa-470e-ab29-d9e50d55b469",
+                    "ips": "10.135.147.19",
+                    "process_state": "running",
+                    "vm_cid": "vm-8ec0c3a6-3d8d-4482-a03f-8e98e1d5b171",
+                    "vm_type": "medium.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "uaa/4c1cd8d8-5dbb-497b-966f-feba1c167924",
+                    "ips": "10.135.140.13",
+                    "process_state": "running",
+                    "vm_cid": "vm-56e3666d-7a62-4fb1-8c28-ef564d0c8f61",
+                    "vm_type": "medium.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "uaa/d6f34775-a722-42fe-999d-cef1b6c9bf1c",
+                    "ips": "10.135.133.15",
+                    "process_state": "running",
+                    "vm_cid": "vm-3dab22ab-a79f-44b3-bc33-6ab8ca70732e",
+                    "vm_type": "medium.disk"
+                }
+            ],
+            "Notes": null
+        },
+        {
+            "Content": "vms",
+            "Header": {
+                "active": "Active",
+                "az": "AZ",
+                "instance": "Instance",
+                "ips": "IPs",
+                "process_state": "Process State",
+                "vm_cid": "VM CID",
+                "vm_type": "VM Type"
+            },
+            "Rows": [
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-PCC-AZ1",
+                    "instance": "cloudcache-broker/bd933341-d39a-4e22-b575-cfa5ca0e15c5",
+                    "ips": "10.135.133.201",
+                    "process_state": "running",
+                    "vm_cid": "vm-e68674a7-a591-4064-8b79-7af778032820",
+                    "vm_type": "micro"
+                }
+            ],
+            "Notes": null
+        },
+        {
+            "Content": "vms",
+            "Header": {
+                "active": "Active",
+                "az": "AZ",
+                "instance": "Instance",
+                "ips": "IPs",
+                "process_state": "Process State",
+                "vm_cid": "VM CID",
+                "vm_type": "VM Type"
+            },
+            "Rows": [
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-PCC-AZ2",
+                    "instance": "dedicated-mysql-broker/27c6091f-d395-4a44-9f90-3e3e1921cde9",
+                    "ips": "10.135.140.202",
+                    "process_state": "running",
+                    "vm_cid": "vm-1bc5cc34-9de0-4afe-b72c-2bec0e197219",
+                    "vm_type": "small.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-PCC-AZ2",
+                    "instance": "dedicated-mysql-broker/4d133b32-ae56-4d52-8e84-e8ce4b6d25d8",
+                    "ips": "10.135.140.201",
+                    "process_state": "running",
+                    "vm_cid": "vm-bb446f00-53ab-4a2f-a82c-997c2e9d856f",
+                    "vm_type": "small.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-PCC-AZ2",
+                    "instance": "dedicated-mysql-broker/ce13d725-53bc-4c4b-be96-a202a35bceb2",
+                    "ips": "10.135.140.203",
+                    "process_state": "running",
+                    "vm_cid": "vm-6278ba7f-d08f-4aaf-8cc4-d4bf3c8e422f",
+                    "vm_type": "small.disk"
+                }
+            ],
+            "Notes": null
+        },
+        {
+            "Content": "vms",
+            "Header": {
+                "active": "Active",
+                "az": "AZ",
+                "instance": "Instance",
+                "ips": "IPs",
+                "process_state": "Process State",
+                "vm_cid": "VM CID",
+                "vm_type": "VM Type"
+            },
+            "Rows": [
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "broker/6c342cf2-67bd-48d1-babc-024a18616598",
+                    "ips": "10.135.140.35",
+                    "process_state": "running",
+                    "vm_cid": "vm-86d2238d-820c-4ead-b65f-1eea7b8051bd",
+                    "vm_type": "medium.cpu"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "metrics-forwarder/1edc4152-8fc4-4bd3-8c5d-5b8fffdde943",
+                    "ips": "10.135.133.32",
+                    "process_state": "running",
+                    "vm_cid": "vm-d0049eae-3e32-4c6b-a60b-9cbce2b9151e",
+                    "vm_type": "medium.cpu"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "metrics-forwarder/9b8c059e-4290-4e31-be06-5459a3d4cb49",
+                    "ips": "10.135.140.36",
+                    "process_state": "running",
+                    "vm_cid": "vm-1838c9d7-19ce-45c7-a4ed-9e8a796354ea",
+                    "vm_type": "medium.cpu"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "metrics-forwarder/b0373e7b-5252-4cbe-8b32-17c36e8a4e46",
+                    "ips": "10.135.147.26",
+                    "process_state": "running",
+                    "vm_cid": "vm-c4fe6975-7581-466f-8361-56dafb391544",
+                    "vm_type": "medium.cpu"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "mysql/4813f5ab-4aa5-4460-8c5e-2a4bab29a3e0",
+                    "ips": "10.135.140.18",
+                    "process_state": "running",
+                    "vm_cid": "vm-ac3fb291-72b8-468c-b004-c88fd29836fa",
+                    "vm_type": "medium.cpu"
+                }
+            ],
+            "Notes": null
+        },
+        {
+            "Content": "vms",
+            "Header": {
+                "active": "Active",
+                "az": "AZ",
+                "instance": "Instance",
+                "ips": "IPs",
+                "process_state": "Process State",
+                "vm_cid": "VM CID",
+                "vm_type": "VM Type"
+            },
+            "Rows": [
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "backup-prepare/2bc32e93-875e-4127-ab93-1002c9c2f68b",
+                    "ips": "10.135.147.11",
+                    "process_state": "running",
+                    "vm_cid": "vm-faa756e5-4829-4ad6-8f0a-b5357133f225",
+                    "vm_type": "large.cpu"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "cf-mysql-broker/3f223c47-439a-4b5e-b8b7-4d93978f4f89",
+                    "ips": "10.135.140.27",
+                    "process_state": "unresponsive agent",
+                    "vm_cid": "vm-0f08bf40-68d5-457d-9ae9-3100d742d18f",
+                    "vm_type": "small.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "cf-mysql-broker/44334d7c-0b23-4cfb-8fe7-65a568fe4844",
+                    "ips": "10.135.133.40",
+                    "process_state": "running",
+                    "vm_cid": "vm-bbf0e9ad-9479-4721-9112-eea413d3112b",
+                    "vm_type": "small.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "cf-mysql-broker/e3dd958f-1d85-4733-82cd-db7929d2240e",
+                    "ips": "10.135.147.36",
+                    "process_state": "running",
+                    "vm_cid": "vm-45877f2e-4a57-4654-866c-576cb9487661",
+                    "vm_type": "small.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "monitoring/cc324df6-74b5-42ae-bbbd-b998b04df6e4",
+                    "ips": "10.135.147.24",
+                    "process_state": "running",
+                    "vm_cid": "vm-8ff502aa-4132-43b8-959d-490ed1af0e85",
+                    "vm_type": "small"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "mysql/1220e1d4-8476-42df-b490-40e4721a5db4",
+                    "ips": "10.135.140.26",
+                    "process_state": "running",
+                    "vm_cid": "vm-eb638434-84ac-4e48-9021-ef5b2aa8052f",
+                    "vm_type": "large.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "mysql/1bdf1a4a-e4f9-408a-b7d4-52279044eaa3",
+                    "ips": "10.135.133.39",
+                    "process_state": "running",
+                    "vm_cid": "vm-57b7b8c9-f9e7-47b7-b007-83182185f1e1",
+                    "vm_type": "large.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "mysql/5079e313-8f1c-4510-b732-50917eafca68",
+                    "ips": "10.135.147.23",
+                    "process_state": "running",
+                    "vm_cid": "vm-3fe4bbfa-f9d3-4971-8fcc-1ef24334a184",
+                    "vm_type": "large.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "proxy/503c907b-2676-48c0-a0b6-a54ed0967e99",
+                    "ips": "10.135.140.120",
+                    "process_state": "running",
+                    "vm_cid": "vm-642a8e45-1d3a-48b7-b61a-995a60084079",
+                    "vm_type": "small.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "proxy/99d4f992-1536-4f8c-be6b-007c4e7ebc5b",
+                    "ips": "10.135.147.120",
+                    "process_state": "running",
+                    "vm_cid": "vm-25b576bf-4166-43c1-9008-b5d05e107794",
+                    "vm_type": "small.disk"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "proxy/e46d7e3a-5c35-47ef-bc42-aef2e10cf340",
+                    "ips": "10.135.133.120",
+                    "process_state": "running",
+                    "vm_cid": "vm-f8589430-8dc1-4e05-ae0e-193700d4384a",
+                    "vm_type": "small.disk"
+                }
+            ],
+            "Notes": null
+        },
+        {
+            "Content": "vms",
+            "Header": {
+                "active": "Active",
+                "az": "AZ",
+                "instance": "Instance",
+                "ips": "IPs",
+                "process_state": "Process State",
+                "vm_cid": "VM CID",
+                "vm_type": "VM Type"
+            },
+            "Rows": [
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "on-demand-broker/d4b1aa6c-9ea4-4f98-807f-d850176bd748",
+                    "ips": "10.135.133.26",
+                    "process_state": "running",
+                    "vm_cid": "vm-29fcb250-3adc-4939-b518-d69b2fdba9fc",
+                    "vm_type": "micro"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "rabbitmq-broker/573dc03f-1de3-4e87-9396-924c9a0d7471",
+                    "ips": "10.135.133.53",
+                    "process_state": "running",
+                    "vm_cid": "vm-ec5e66e2-0026-47fe-a1d8-5fff0b2ce521",
+                    "vm_type": "small"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "rabbitmq-haproxy/0fe9a6c0-f8e5-4c51-9f08-4f3f79c649b6",
+                    "ips": "10.135.147.31",
+                    "process_state": "running",
+                    "vm_cid": "vm-6f8cf40f-deaa-447b-b9ed-7cca269e09bc",
+                    "vm_type": "medium"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "rabbitmq-haproxy/85cf7600-58ea-49c2-8730-150643bf8064",
+                    "ips": "10.135.133.52",
+                    "process_state": "running",
+                    "vm_cid": "vm-dac09934-d0df-47dc-a429-ddb7c9fd458e",
+                    "vm_type": "medium"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "rabbitmq-haproxy/99e7fffd-265b-4634-bd53-a679bc384e5d",
+                    "ips": "10.135.140.61",
+                    "process_state": "running",
+                    "vm_cid": "vm-ce6b5adf-ccc1-4049-ab7a-d7eac8cc09bc",
+                    "vm_type": "medium"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "rabbitmq-server/61efe753-bd1b-4ac0-bc47-8f1cac308011",
+                    "ips": "10.135.133.51",
+                    "process_state": "running",
+                    "vm_cid": "vm-2fa48b49-d8c8-4a2f-930c-a75512542f04",
+                    "vm_type": "2xlarge"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "rabbitmq-server/7302d7be-c812-40ad-94a4-a9224602f6d7",
+                    "ips": "10.135.147.30",
+                    "process_state": "running",
+                    "vm_cid": "vm-0a339338-c791-4961-84f9-81821ccc62e6",
+                    "vm_type": "2xlarge"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "rabbitmq-server/8c934665-a700-49fd-a72e-d9b2c6cdc8a8",
+                    "ips": "10.135.140.60",
+                    "process_state": "running",
+                    "vm_cid": "vm-5b7d1c60-507d-4d0e-9f12-831ec52ca1c4",
+                    "vm_type": "2xlarge"
+                }
+            ],
+            "Notes": null
+        },
+        {
+            "Content": "vms",
+            "Header": {
+                "active": "Active",
+                "az": "AZ",
+                "instance": "Instance",
+                "ips": "IPs",
+                "process_state": "Process State",
+                "vm_cid": "VM CID",
+                "vm_type": "VM Type"
+            },
+            "Rows": [
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "cf-redis-broker/5118204a-5c8e-44c7-ac80-229e8a5a0915",
+                    "ips": "10.135.133.30",
+                    "process_state": "running",
+                    "vm_cid": "vm-1cc4df3d-55a9-4b64-9b3d-6d4cdf1c37ae",
+                    "vm_type": "xlarge"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "dedicated-node/20ba5a39-8a12-43da-b384-65a6c94515b6",
+                    "ips": "10.135.140.42",
+                    "process_state": "running",
+                    "vm_cid": "vm-c8b3773c-4396-405d-99f6-4ba01773df11",
+                    "vm_type": "micro.ram"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ2",
+                    "instance": "dedicated-node/5c576727-cb10-4e7e-9497-45aed2683630",
+                    "ips": "10.135.140.43",
+                    "process_state": "running",
+                    "vm_cid": "vm-c225dbf7-2fc4-4fc0-80e3-16ad1956da10",
+                    "vm_type": "micro.ram"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "dedicated-node/65b5b419-8ffa-432c-9814-b90ece9d173d",
+                    "ips": "10.135.147.27",
+                    "process_state": "running",
+                    "vm_cid": "vm-ea224b4b-4c36-40e0-90b8-91cf1c6fcdf1",
+                    "vm_type": "micro.ram"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "dedicated-node/e40a0577-d1e3-4dde-9446-322c55b9a033",
+                    "ips": "10.135.133.33",
+                    "process_state": "running",
+                    "vm_cid": "vm-224ab11e-ba7b-48e1-8b44-2d1ecf0f1608",
+                    "vm_type": "micro.ram"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ1",
+                    "instance": "dedicated-node/fa21eb31-0941-4d75-8bd3-a8b486a55524",
+                    "ips": "10.135.133.34",
+                    "process_state": "running",
+                    "vm_cid": "vm-032a2e2d-4821-4385-b146-83edf1e94593",
+                    "vm_type": "micro.ram"
+                },
+                {
+                    "active": "true",
+                    "az": "NP-ENV02-AZ3",
+                    "instance": "redis-on-demand-broker/fd3f86f5-f89b-4cd1-906e-05eb3fafae90",
+                    "ips": "",
+                    "process_state": "running",
+                    "vm_cid": "vm-d7304320-f67f-447c-a060-9999eb5b5625",
+                    "vm_type": "medium"
+                }
+            ],
+            "Notes": null
+        },
+        {
+            "Content": "vms",
+            "Header": {
+                "active": "Active",
+                "az": "AZ",
+                "instance": "Instance",
+                "ips": "IPs",
+                "process_state": "Process State",
+                "vm_cid": "VM CID",
+                "vm_type": "VM Type"
+            },
+            "Rows": [],
+            "Notes": null
+        },
+        {
+            "Content": "vms",
+            "Header": {
+                "active": "Active",
+                "az": "AZ",
+                "instance": "Instance",
+                "ips": "IPs",
+                "process_state": "Process State",
+                "vm_cid": "VM CID",
+                "vm_type": "VM Type"
+            },
+            "Rows": [],
+            "Notes": null
+        }
+    ],
+    "Blocks": null,
+    "Lines": [
+        "Using environment 'https://10.135.140.11:25555' as user 'director' (bosh.*.read, openid, bosh.*.admin, bosh.read, bosh.admin)",
+        "Task 201112",
+        "",
+        "Task 201114",
+        "",
+        "Task 201111",
+        "",
+        "Task 201110",
+        "",
+        "Task 201113",
+        "\nTask 201111 done\n",
+        "",
+        "Task 201115",
+        "\nTask 201114 done\n",
+        "\nTask 201113 done\n",
+        "",
+        "Task 201117",
+        "",
+        "Task 201116",
+        "\nTask 201115 done\n",
+        "",
+        "Task 201118",
+        "\nTask 201112 done\n",
+        "\nTask 201117 done\n",
+        "\nTask 201116 done\n",
+        "\nTask 201118 done\n",
+        "\nTask 201110 done\n",
+        "Succeeded"
+    ]
+}

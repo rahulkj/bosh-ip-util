@@ -6,17 +6,17 @@
           {
             "clusters": [
               {
-                "PCF": {
-                  "resource_pool": "SERVICES_RP"
+                "PCF_XY22624": {
+                  "resource_pool": "17-NP-ENV02-PCC-AZ3"
                 }
               }
             ],
-            "name": "AZ-2"
+            "name": "NP-ENV02-PCC-AZ3"
           }
         ]
       },
-      "cpi": "625ff1d0a8f797530560",
-      "name": "AZ-2"
+      "cpi": "82ba530b5b7cf4063823e43e1a59e2f8",
+      "name": "NP-ENV02-PCC-AZ3"
     },
     {
       "cloud_properties": {
@@ -24,17 +24,17 @@
           {
             "clusters": [
               {
-                "PCF": {
-                  "resource_pool": "PAS_RP"
+                "PCF_XY13811": {
+                  "resource_pool": "17-NP-ENV02-PCC-AZ2"
                 }
               }
             ],
-            "name": "AZ-1"
+            "name": "NP-ENV02-PCC-AZ2"
           }
         ]
       },
-      "cpi": "625ff1d0a8f797530560",
-      "name": "AZ-1"
+      "cpi": "82ba530b5b7cf4063823e43e1a59e2f8",
+      "name": "NP-ENV02-PCC-AZ2"
     },
     {
       "cloud_properties": {
@@ -42,31 +42,85 @@
           {
             "clusters": [
               {
-                "PCF": {
-                  "resource_pool": "MGMT_RP"
+                "PCF_XY13711": {
+                  "resource_pool": "17-NP-ENV02-PCC-AZ1"
                 }
               }
             ],
-            "name": "MGMT-AZ"
+            "name": "NP-ENV02-PCC-AZ1"
           }
         ]
       },
-      "cpi": "625ff1d0a8f797530560",
-      "name": "MGMT-AZ"
+      "cpi": "82ba530b5b7cf4063823e43e1a59e2f8",
+      "name": "NP-ENV02-PCC-AZ1"
+    },
+    {
+      "cloud_properties": {
+        "datacenters": [
+          {
+            "clusters": [
+              {
+                "PCF_XY22624": {
+                  "resource_pool": "07-NP-ENV02-AZ3"
+                }
+              }
+            ],
+            "name": "NP-ENV02-AZ3"
+          }
+        ]
+      },
+      "cpi": "82ba530b5b7cf4063823e43e1a59e2f8",
+      "name": "NP-ENV02-AZ3"
+    },
+    {
+      "cloud_properties": {
+        "datacenters": [
+          {
+            "clusters": [
+              {
+                "PCF_XY13811": {
+                  "resource_pool": "07-NP-ENV02-AZ2"
+                }
+              }
+            ],
+            "name": "NP-ENV02-AZ2"
+          }
+        ]
+      },
+      "cpi": "82ba530b5b7cf4063823e43e1a59e2f8",
+      "name": "NP-ENV02-AZ2"
+    },
+    {
+      "cloud_properties": {
+        "datacenters": [
+          {
+            "clusters": [
+              {
+                "PCF_XY13711": {
+                  "resource_pool": "07-NP-ENV02-AZ1"
+                }
+              }
+            ],
+            "name": "NP-ENV02-AZ1"
+          }
+        ]
+      },
+      "cpi": "82ba530b5b7cf4063823e43e1a59e2f8",
+      "name": "NP-ENV02-AZ1"
     }
   ],
   "compilation": {
-    "az": "MGMT-AZ",
+    "az": "NP-ENV02-AZ2",
     "env": {
       "bosh": {
-        "password": "$6$b1ebd31fa4de93a9$XyAjGwqvcMjniMIPF4PcB0uj8tOk7cjF38MoxZR2i3WtXBgAMHKIOviDZ9MZ1R9DnS9G0utAG44CE6A2TlIcf."
+        "password": "SOMEPASSWORD"
       }
     },
-    "network": "INFRASTRUCTURE",
+    "network": "DEPLOYMENT",
     "reuse_compilation_vms": true,
     "vm_extensions": [],
     "vm_type": "large.cpu",
-    "workers": 4
+    "workers": 8
   },
   "disk_types": [
     {
@@ -268,50 +322,85 @@
   ],
   "networks": [
     {
-      "name": "INFRASTRUCTURE",
-      "subnets": [
-        {
-          "azs": [
-            "MGMT-AZ",
-            "AZ-1",
-            "AZ-2"
-          ],
-          "cloud_properties": {
-            "name": "INFRASTRUCTURE"
-          },
-          "dns": [
-            "10.0.0.1"
-          ],
-          "gateway": "192.168.10.1",
-          "range": "192.168.10.0/26",
-          "reserved": [
-            "192.168.10.1-192.168.10.10"
-          ],
-          "static": []
-        }
-      ],
-      "type": "manual"
-    },
-    {
       "name": "DEPLOYMENT",
       "subnets": [
         {
           "azs": [
-            "AZ-1",
-            "AZ-2"
+            "NP-ENV02-AZ1"
           ],
           "cloud_properties": {
-            "name": "DEPLOYMENT"
+            "name": "XY13711_HAT_10.135.133.0_24_v7"
           },
           "dns": [
-            "10.0.0.1"
+            "10.66.3.25",
+            "10.66.3.26"
           ],
-          "gateway": "192.168.12.1",
-          "range": "192.168.12.0/23",
+          "gateway": "10.135.133.1",
+          "range": "10.135.133.0/24",
           "reserved": [
-            "192.168.12.1-192.168.12.10"
+            "10.135.133.1-10.135.133.10",
+            "10.135.133.129-10.135.133.255"
           ],
-          "static": []
+          "static": [
+            "10.135.133.120",
+            "10.135.133.103",
+            "10.135.133.104",
+            "10.135.133.105",
+            "10.135.133.109",
+            "10.135.133.110"
+          ]
+        },
+        {
+          "azs": [
+            "NP-ENV02-AZ2"
+          ],
+          "cloud_properties": {
+            "name": "XY13811_HAT_10.135.140.0_24_v7"
+          },
+          "dns": [
+            "10.66.3.25",
+            "10.66.3.26"
+          ],
+          "gateway": "10.135.140.1",
+          "range": "10.135.140.0/24",
+          "reserved": [
+            "10.135.140.1-10.135.140.10",
+            "10.135.140.129-10.135.140.255"
+          ],
+          "static": [
+            "10.135.140.120",
+            "10.135.140.103",
+            "10.135.140.104",
+            "10.135.140.105",
+            "10.135.140.109",
+            "10.135.140.110"
+          ]
+        },
+        {
+          "azs": [
+            "NP-ENV02-AZ3"
+          ],
+          "cloud_properties": {
+            "name": "XY22624_HAT_10.135.147.0_24_v7"
+          },
+          "dns": [
+            "10.66.3.25",
+            "10.66.3.26"
+          ],
+          "gateway": "10.135.147.1",
+          "range": "10.135.147.0/24",
+          "reserved": [
+            "10.135.147.1-10.135.147.10",
+            "10.135.147.129-10.135.147.255"
+          ],
+          "static": [
+            "10.135.147.120",
+            "10.135.147.103",
+            "10.135.147.104",
+            "10.135.147.105",
+            "10.135.147.109",
+            "10.135.147.110"
+          ]
         }
       ],
       "type": "manual"
@@ -321,23 +410,58 @@
       "subnets": [
         {
           "azs": [
-            "AZ-1",
-            "AZ-2"
+            "NP-ENV02-AZ1"
           ],
           "cloud_properties": {
-            "name": "SERVICES"
+            "name": "XY13711_HAT_10.135.133.0_24_v7"
           },
           "dns": [
-            "10.0.0.1"
+            "10.66.3.25",
+            "10.66.3.26"
           ],
-          "gateway": "192.168.14.1",
-          "range": "192.168.14.0/23",
+          "gateway": "10.135.133.1",
+          "range": "10.135.133.0/24",
           "reserved": [
-            "192.168.14.1-192.168.14.10",
-            "192.168.14.11",
-            "192.168.14.100-192.168.14.110",
-            "192.168.14.240-192.168.14.250",
-            "192.168.15.255"
+            "10.135.133.1-10.135.133.128",
+            "10.135.133.200-10.135.133.255"
+          ],
+          "static": []
+        },
+        {
+          "azs": [
+            "NP-ENV02-AZ2"
+          ],
+          "cloud_properties": {
+            "name": "XY13811_HAT_10.135.140.0_24_v7"
+          },
+          "dns": [
+            "10.66.3.25",
+            "10.66.3.26"
+          ],
+          "gateway": "10.135.140.1",
+          "range": "10.135.140.0/24",
+          "reserved": [
+            "10.135.140.1-10.135.140.128",
+            "10.135.140.200-10.135.140.255"
+          ],
+          "static": []
+        },
+        {
+          "azs": [
+            "NP-ENV02-AZ3"
+          ],
+          "cloud_properties": {
+            "name": "XY22624_HAT_10.135.147.0_24_v7"
+          },
+          "dns": [
+            "10.66.3.25",
+            "10.66.3.26"
+          ],
+          "gateway": "10.135.147.1",
+          "range": "10.135.147.0/24",
+          "reserved": [
+            "10.135.147.1-10.135.147.128",
+            "10.135.147.200-10.135.147.255"
           ],
           "static": []
         }
@@ -345,25 +469,62 @@
       "type": "manual"
     },
     {
-      "name": "PKS",
+      "name": "ABC-DEPLOYMENT",
       "subnets": [
         {
           "azs": [
-            "AZ-1",
-            "AZ-2"
+            "NP-ENV02-PCC-AZ1"
           ],
           "cloud_properties": {
-            "name": "PKS"
+            "name": "XY13711_HAT_10.135.133.0_24_v7"
           },
           "dns": [
-            "10.0.0.1"
+            "10.66.3.25",
+            "10.66.3.26"
           ],
-          "gateway": "192.168.16.1",
-          "range": "192.168.16.0/23",
+          "gateway": "10.135.133.1",
+          "range": "10.135.133.0/24",
           "reserved": [
-            "192.168.16.1-192.168.16.10",
-            "192.168.16.11",
-            "192.168.17.1-192.168.17.255"
+            "10.135.133.0-10.135.133.200",
+            "10.135.133.220-10.135.133.255"
+          ],
+          "static": []
+        },
+        {
+          "azs": [
+            "NP-ENV02-PCC-AZ2"
+          ],
+          "cloud_properties": {
+            "name": "XY13811_HAT_10.135.140.0_24_v7"
+          },
+          "dns": [
+            "10.66.3.25",
+            "10.66.3.26"
+          ],
+          "gateway": "10.135.140.1",
+          "range": "10.135.140.0/24",
+          "reserved": [
+            "10.135.140.0-10.135.140.200",
+            "10.135.140.220-10.135.140.255"
+          ],
+          "static": []
+        },
+        {
+          "azs": [
+            "NP-ENV02-PCC-AZ3"
+          ],
+          "cloud_properties": {
+            "name": "XY22624_HAT_10.135.147.0_24_v7"
+          },
+          "dns": [
+            "10.66.3.25",
+            "10.66.3.26"
+          ],
+          "gateway": "10.135.147.1",
+          "range": "10.135.147.0/24",
+          "reserved": [
+            "10.135.147.0-10.135.147.200",
+            "10.135.147.220-10.135.147.255"
           ],
           "static": []
         }
@@ -371,23 +532,62 @@
       "type": "manual"
     },
     {
-      "name": "PKS-SERVICES",
+      "name": "ABC-SERVICES",
       "subnets": [
         {
           "azs": [
-            "AZ-1",
-            "AZ-2"
+            "NP-ENV02-PCC-AZ1"
           ],
           "cloud_properties": {
-            "name": "PKS"
+            "name": "XY13711_HAT_10.135.133.0_24_v7"
           },
           "dns": [
-            "10.0.0.1"
+            "10.66.3.25",
+            "10.66.3.26"
           ],
-          "gateway": "192.168.16.1",
-          "range": "192.168.16.0/23",
+          "gateway": "10.135.133.1",
+          "range": "10.135.133.0/24",
           "reserved": [
-            "192.168.16.1-192.168.17.10"
+            "10.135.133.0-10.135.133.219",
+            "10.135.133.240-10.135.133.255"
+          ],
+          "static": []
+        },
+        {
+          "azs": [
+            "NP-ENV02-PCC-AZ2"
+          ],
+          "cloud_properties": {
+            "name": "XY13811_HAT_10.135.140.0_24_v7"
+          },
+          "dns": [
+            "10.66.3.25",
+            "10.66.3.26"
+          ],
+          "gateway": "10.135.140.1",
+          "range": "10.135.140.0/24",
+          "reserved": [
+            "10.135.140.0-10.135.140.219",
+            "10.135.140.240-10.135.140.255"
+          ],
+          "static": []
+        },
+        {
+          "azs": [
+            "NP-ENV02-PCC-AZ3"
+          ],
+          "cloud_properties": {
+            "name": "XY22624_HAT_10.135.147.0_24_v7"
+          },
+          "dns": [
+            "10.66.3.25",
+            "10.66.3.26"
+          ],
+          "gateway": "10.135.147.1",
+          "range": "10.135.147.0/24",
+          "reserved": [
+            "10.135.147.0-10.135.147.219",
+            "10.135.147.240-10.135.147.255"
           ],
           "static": []
         }
@@ -569,6 +769,46 @@
         "ram": 16384
       },
       "name": "2xlarge.cpu"
+    },
+    {
+      "cloud_properties": {
+        "cpu": 8,
+        "disk": 131072,
+        "ram": 65536
+      },
+      "name": "2xlarge.diegocell"
+    },
+    {
+      "cloud_properties": {
+        "cpu": 8,
+        "disk": 131072,
+        "ram": 65536
+      },
+      "name": "2xlarge.diegocell-test"
+    },
+    {
+      "cloud_properties": {
+        "cpu": 8,
+        "disk": 196608,
+        "ram": 65536
+      },
+      "name": "2xlarge.mem.diegocell"
+    },
+    {
+      "cloud_properties": {
+        "cpu": 6,
+        "disk": 16384,
+        "ram": 8192
+      },
+      "name": "large.doppler"
+    },
+    {
+      "cloud_properties": {
+        "cpu": 2,
+        "disk": 65536,
+        "ram": 49152
+      },
+      "name": "large.mem.redis"
     }
   ]
 }

@@ -31,18 +31,27 @@ func compute(cloudConfigOutputJSON string, boshVMsOutput string, boshIP string) 
 			ips := getAllIPsInCIDR(ip, ipv4Net)
 
 			totalIps := (len(ips) - 2)
-			totalReservedIps, isBoshIPReserved := getTotalReservedIPs(subnet, ips, boshIP)
-			availableIPs := computeAvailableIPS(boshVMS, ipv4Net, cloudConfig, network.Name, totalIps,
-				totalReservedIps, boshIP, isBoshIPReserved)
+			reservedIPs, isBoshIPReserved := getTotalReservedIPs(subnet, ips, boshIP)
+			availableIPs, totalIPsInUse := computeAvailableIPS(boshVMS, ipv4Net, totalIps,
+				reservedIPs, boshIP, isBoshIPReserved)
+
+			totalCompilationVMIPs := 0
+			if network.Name == cloudConfig.Compilation.Network {
+				totalCompilationVMIPs = cloudConfig.Compilation.Workers
+			}
 
 			o := Result{
-				Network:           network.Name,
-				ReservedIPRange:   subnet.Reserved,
-				StaticIPRange:     subnet.Static,
-				CIDR:              subnet.Range,
-				TotalIPs:          totalIps,
-				TotalAvailableIPs: availableIPs,
-				TotalReservedIPs:  totalReservedIps,
+				Network:                         network.Name,
+				SubnetName:                      subnet.CloudProperties.Name,
+				AZs:                             subnet.AZs,
+				CIDR:                            subnet.Range,
+				ReservedIPRange:                 subnet.Reserved,
+				StaticIPRange:                   subnet.Static,
+				TotalIPs:                        totalIps,
+				TotalReservedIPs:                len(reservedIPs),
+				TotalIPsInUse:                   totalIPsInUse,
+				TotalAvailableIPs:               availableIPs,
+				TotalIPsNeededForCompilationVMs: totalCompilationVMIPs,
 			}
 
 			results = append(results, o)
@@ -80,7 +89,8 @@ func inc(ip net.IP) {
 }
 
 // Sum all the reserved ip/range that belong to the subnet of the given network
-func getTotalReservedIPs(subnet Subnet, ips []string, boshIP string) (int, bool) {
+func getTotalReservedIPs(subnet Subnet, ips []string, boshIP string) ([]string, bool) {
+	var reservedIPs []string
 	totalReservedIps := 0
 	isboshIPReserved := false
 	for _, reserved := range subnet.Reserved {
@@ -107,6 +117,10 @@ func getTotalReservedIPs(subnet Subnet, ips []string, boshIP string) (int, bool)
 				}
 			}
 
+			slice1 := ips[startIPIndex : endIPIndex+1]
+
+			reservedIPs = append(reservedIPs, slice1...)
+
 			if (boshIP == startIP || boshIP == endIP) && (boshIPIndex >= startIPIndex && boshIPIndex <= endIPIndex) {
 				isboshIPReserved = true
 			}
@@ -114,6 +128,7 @@ func getTotalReservedIPs(subnet Subnet, ips []string, boshIP string) (int, bool)
 			totalReservedIps += len(ips[startIPIndex : endIPIndex+1])
 		} else if len(reservedIps) == 1 {
 			totalReservedIps++
+			reservedIPs = append(reservedIPs, reservedIps[0])
 
 			if boshIP == reservedIps[0] {
 				isboshIPReserved = true
@@ -122,30 +137,39 @@ func getTotalReservedIPs(subnet Subnet, ips []string, boshIP string) (int, bool)
 
 	}
 
-	return totalReservedIps, isboshIPReserved
+	return reservedIPs, isboshIPReserved
 }
 
 // If bosh director IP is part of reserved IP Ranges in the right network, then don't reduce the available IP's count
 // If compilation VM's are part of the network, then subtract that number from available IP's count
 // availableIPs = totalIps - totalReservedIps - ipsinuse - (above conditions if true)
-func computeAvailableIPS(boshVMS BoshVMs, ipv4Net *net.IPNet, cloudConfig CloudConfig,
-	network string, totalIps int, totalReservedIps int, boshIP string, isBoshIPReserved bool) int {
-	availableIPs := totalIps - totalReservedIps
+func computeAvailableIPS(boshVMS BoshVMs, ipv4Net *net.IPNet, totalIps int, reservedIPs []string, boshIP string, isBoshIPReserved bool) (int, int) {
+	usedIPsCount := 0
+	availableIPs := totalIps - len(reservedIPs)
 	for _, table := range boshVMS.Tables {
 		for _, row := range table.Rows {
 			if ipv4Net.Contains(net.ParseIP(row.IPS)) {
-				availableIPs = availableIPs - 1
+				if !contains(reservedIPs, row.IPS) {
+					availableIPs = availableIPs - 1
+					usedIPsCount++
+				}
 			}
 		}
 	}
 
-	if network == cloudConfig.Compilation.Network {
-		availableIPs = availableIPs - cloudConfig.Compilation.Workers
-	}
-
 	if ipv4Net.Contains(net.ParseIP(boshIP)) && !isBoshIPReserved {
 		availableIPs = availableIPs - 1
+		usedIPsCount++
 	}
 
-	return availableIPs
+	return availableIPs, usedIPsCount
+}
+
+func contains(reservedIPs []string, ip string) bool {
+	for _, reservedIP := range reservedIPs {
+		if reservedIP == ip {
+			return true
+		}
+	}
+	return false
 }

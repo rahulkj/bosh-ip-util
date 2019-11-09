@@ -5,11 +5,15 @@ type Results struct {
 }
 
 type Result struct {
-	Network           string
-	ReservedIPRange   []string
-	StaticIPRange     []string
-	CIDR              string
-	TotalIPs          int
-	TotalAvailableIPs int
-	TotalReservedIPs  int
+	Network                         string
+	SubnetName                      string
+	AZs                             []string
+	ReservedIPRange                 []string
+	StaticIPRange                   []string
+	CIDR                            string
+	TotalIPs                        int
+	TotalReservedIPs                int
+	TotalIPsInUse                   int
+	TotalAvailableIPs               int
+	TotalIPsNeededForCompilationVMs int
 }
