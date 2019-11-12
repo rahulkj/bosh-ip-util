@@ -71,9 +71,7 @@ func getAllIPsInCIDR(ip net.IP, ipv4Net *net.IPNet) []string {
 
 	var ips []string
 	for ip := ip.Mask(ipv4Net.Mask); ipv4Net.Contains(ip); inc(ip) {
-		if !strings.HasSuffix(ip.String(), ".0") {
-			ips = append(ips, ip.String())
-		}
+		ips = append(ips, ip.String())
 	}
 
 	return ips
@@ -98,6 +96,16 @@ func getTotalReservedIPs(subnet Subnet, ips []string, boshIP string) ([]string, 
 		if len(reservedIps) == 2 {
 			startIP := reservedIps[0]
 			endIP := reservedIps[1]
+
+			if strings.HasSuffix(startIP, ".0") {
+				startIP = strings.TrimSuffix(startIP, ".0")
+				startIP = startIP + ".1"
+			}
+
+			if strings.HasSuffix(endIP, ".0") {
+				endIP = strings.TrimSuffix(endIP, ".0")
+				endIP = endIP + ".1"
+			}
 
 			startIPIndex := 0
 			endIPIndex := 0
