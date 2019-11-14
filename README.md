@@ -3,12 +3,16 @@ BOSH IP Utility
 
 This tool allows one to inspect the cloud config, bosh vms output, to determine:
 * Network names
+* Subnet Names
+* Availiability Zones
 * CIDR defined
 * Reserved IP Range/s
 * State IP Range/s
-* Total IPs in the CIDR
+* Total IP's in the CIDR
 * Total Reserved IPs
+* Total IP's in use
 * Total Available IPs
+* Total IP's needed for compilation vms
 
 
 ### How to Build
@@ -42,50 +46,83 @@ You will get a JSON output, that you can parse. Sample Data:
   "Result": [
     {
       "Network": "INFRASTRUCTURE",
+      "SubnetName": "INFRASTRUCTURE",
+      "AZs": [
+        "MGMT-AZ",
+        "AZ-1",
+        "AZ-2"
+      ],
       "ReservedIPRange": [
         "192.168.10.1-192.168.10.10"
       ],
       "StaticIPRange": [],
       "CIDR": "192.168.10.0/26",
-      "TotalIPs": 61,
-      "TotalAvailableIPs": 46,
-      "TotalReservedIPs": 10
+      "TotalIPs": 62,
+      "TotalReservedIPs": 10,
+      "TotalIPsInUse": 1,
+      "TotalAvailableIPs": 51,
+      "TotalIPsNeededForCompilationVMs": 4
     },
     {
       "Network": "DEPLOYMENT",
+      "SubnetName": "DEPLOYMENT",
+      "AZs": [
+        "AZ-1",
+        "AZ-2"
+      ],
       "ReservedIPRange": [
         "192.168.12.1-192.168.12.10"
       ],
-      "StaticIPRange": [],
+      "StaticIPRange": [
+        "192.168.12.245",
+        "192.168.12.250",
+        "192.168.12.252",
+        "192.168.12.240"
+      ],
       "CIDR": "192.168.12.0/23",
-      "TotalIPs": 508,
-      "TotalAvailableIPs": 497,
-      "TotalReservedIPs": 10
+      "TotalIPs": 510,
+      "TotalReservedIPs": 10,
+      "TotalIPsInUse": 22,
+      "TotalAvailableIPs": 478,
+      "TotalIPsNeededForCompilationVMs": 0
     },
     {
       "Network": "SERVICES",
+      "SubnetName": "SERVICES",
+      "AZs": [
+        "AZ-1",
+        "AZ-2"
+      ],
       "ReservedIPRange": [
-        "192.168.14.1-192.168.14.10",
-        "192.168.14.100-192.168.14.110",
-        "192.168.14.240-192.168.14.250",
-        "192.168.15.255"
+        "192.168.14.1-192.168.14.10"
       ],
       "StaticIPRange": [],
       "CIDR": "192.168.14.0/23",
-      "TotalIPs": 508,
-      "TotalAvailableIPs": 475,
-      "TotalReservedIPs": 33
+      "TotalIPs": 510,
+      "TotalReservedIPs": 10,
+      "TotalIPsInUse": 0,
+      "TotalAvailableIPs": 500,
+      "TotalIPsNeededForCompilationVMs": 0
     },
     {
       "Network": "PKS",
+      "SubnetName": "PKS",
+      "AZs": [
+        "AZ-1",
+        "AZ-2"
+      ],
       "ReservedIPRange": [
         "192.168.16.1-192.168.16.10"
       ],
-      "StaticIPRange": [],
+      "StaticIPRange": [
+        "192.168.16.12"
+      ],
       "CIDR": "192.168.16.0/23",
-      "TotalIPs": 508,
+      "TotalIPs": 510,
+      "TotalReservedIPs": 10,
+      "TotalIPsInUse": 2,
       "TotalAvailableIPs": 498,
-      "TotalReservedIPs": 10
+      "TotalIPsNeededForCompilationVMs": 0
     }
   ]
 }
