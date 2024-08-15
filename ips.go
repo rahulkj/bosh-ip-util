@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"net"
+	"slices"
 	"strings"
 )
 
@@ -92,10 +93,10 @@ func getTotalReservedIPs(subnet Subnet, ips []string, boshIP string) ([]string, 
 	totalReservedIps := 0
 	isboshIPReserved := false
 	for _, reserved := range subnet.Reserved {
-		reservedIps := strings.Split(reserved, "-")
-		if len(reservedIps) == 2 {
-			startIP := reservedIps[0]
-			endIP := reservedIps[1]
+		reservedRange := strings.Split(reserved, "-")
+		if len(reservedRange) == 2 {
+			startIP := reservedRange[0]
+			endIP := reservedRange[1]
 
 			if strings.HasSuffix(startIP, ".0") {
 				startIP = strings.TrimSuffix(startIP, ".0")
@@ -107,23 +108,9 @@ func getTotalReservedIPs(subnet Subnet, ips []string, boshIP string) ([]string, 
 				endIP = endIP + ".1"
 			}
 
-			startIPIndex := 0
-			endIPIndex := 0
-			boshIPIndex := 0
-
-			for i := range ips {
-				if startIP == ips[i] {
-					startIPIndex = i
-				}
-
-				if endIP == ips[i] {
-					endIPIndex = i
-				}
-
-				if boshIP == ips[i] {
-					boshIPIndex = i
-				}
-			}
+			startIPIndex := slices.Index(ips, startIP)
+			endIPIndex := slices.Index(ips, endIP)
+			boshIPIndex := slices.Index(ips, boshIP)
 
 			slice1 := ips[startIPIndex : endIPIndex+1]
 
@@ -134,11 +121,11 @@ func getTotalReservedIPs(subnet Subnet, ips []string, boshIP string) ([]string, 
 			}
 
 			totalReservedIps += len(ips[startIPIndex : endIPIndex+1])
-		} else if len(reservedIps) == 1 {
+		} else if len(reservedRange) == 1 {
 			totalReservedIps++
-			reservedIPs = append(reservedIPs, reservedIps[0])
+			reservedIPs = append(reservedIPs, reservedRange[0])
 
-			if boshIP == reservedIps[0] {
+			if boshIP == reservedRange[0] {
 				isboshIPReserved = true
 			}
 		}
